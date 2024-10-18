@@ -15,8 +15,9 @@ export const Tbody = styled.tbody``;
 export const Tr = styled.tr``;
 
 export const Th = styled.th`
+    text-align: ${(props) => (props.alignCenter ? "center" : "start")};
     border-radius: inset;
     padding-bottom: 5px;
     text-align: ${(props) => (props.alignCenter ? "center" : "start")};
-    text-align: ${(props) => (props.width ? props.width + "%" : "auto")};
+    width: ${(props) => (props.width ? props.width + "%" : "auto")};
 `;

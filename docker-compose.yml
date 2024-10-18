@@ -1,0 +1,14 @@
+version: '3'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app  # Monta o diretório atual no contêiner
+      - /app/node_modules  # Evita que a pasta node_modules seja sobrescrita
+    ports:
+      - "3000:3000"  # Mapeia a porta 3000 do host para a porta 3000 do contêiner
+    environment:
+      NODE_ENV: development  # Define o ambiente como desenvolvimento
+    command: npm start  # Comando para rodar o app
